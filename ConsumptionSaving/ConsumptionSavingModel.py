@@ -455,7 +455,7 @@ class ConsumptionSavingModelClass():
     # simulate #
     ############
     
-    def simulate(self,seed=2017):
+    def simulate(self,seed=2017, do_print = True):
         """ simulate the model """
 
         np.random.seed(seed)
@@ -491,7 +491,9 @@ class ConsumptionSavingModelClass():
         sim.C = sim.c*sim.P
         sim.A = sim.a*sim.P
 
-        print(f'model simulated in {time.time()-t0:.1f} secs')
+        if do_print:
+            print(f'model simulated in {time.time()-t0:.1f} secs')
+
 
     def simulate_timeloop(self):
         """ simulate model with loop over time """
